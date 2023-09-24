@@ -4,68 +4,14 @@
 </div>
 
 <div class="search-container">
-<input type="text" placeholder="search">
+    <form #form="ngForm" (submit)="onSubmit()">
+        <input type="text" placeholder="Search city" name="city" [(ngModel)]="city">
+      </form>
 <div class="location-picker"></div>
 </div>
 
 <div class="location-overview-container">
-    <div class="location-tile">
-        <div class="location-tile-top">
-            <div class="tile-top-weather">
-                <div class="tile-temp">32°</div>
-                <div class="tile-weather">Cloudy</div>
-            </div>
-            <div class="tile-top-icon">
-                <img src="/assets/images/verycloudy.png" alt="">
-            </div>
-        </div>
-        <div class="location-tile-bottom">
-            California
-        </div>
-    </div>
-
-    <div class="location-tile">
-        <div class="location-tile-top">
-            <div class="tile-top-weather">
-                <div class="tile-temp">28°</div>
-                <div class="tile-weather">Lightning</div>
-            </div>
-            <div class="tile-top-icon">
-                <img src="/assets/images/lightning.png" alt="">
-            </div>
-        </div>
-        <div class="location-tile-bottom">
-            Paris
-        </div>
-    </div>
-
-    <div class="location-tile">
-        <div class="location-tile-top">
-            <div class="tile-top-weather">
-                <div class="tile-temp">24°</div>
-                <div class="tile-weather">Rainy</div>
-            </div>
-            <div class="tile-top-icon">
-                <img src="/assets/images/rain.png" alt="">
-            </div>
-        </div>
-        <div class="location-tile-bottom">
-            London
-        </div>
-    </div>
-
-    <div class="location-tile">
-        <div class="location-tile-top">
-            <div class="tile-top-weather">
-                <div class="tile-temp">15°</div>
-                <div class="tile-weather">Sunny</div>
-            </div>
-            <div class="tile-top-icon">
-                <img src="/assets/images/sunny.png" alt="">
-            </div>
-        </div>
-        <div class="location-tile-bottom">
-            Meerbusch
-        </div>
-    </div>
+    <app-tile-location></app-tile-location>
+    <app-tile-location></app-tile-location>
+    <app-tile-location></app-tile-location>
 </div>

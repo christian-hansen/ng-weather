@@ -17,65 +17,14 @@
 
 .location-overview-container {
   display: flex;
+//   flex-direction: row;
   flex-wrap: wrap;
-  gap: 1rem;
-}
+//   gap: 1rem;
+  width: 100%;
 
-.location-tile {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: calc(50% - 0.5rem);
-  min-height: 9rem;
-  max-height: 9rem;
-
-  background-color: rgba(255, 255, 255, 0.05);
-  padding: 0.5rem;
-  border-radius: 1.5rem;
-
-  .location-tile-top {
-    display: flex;
-    width: calc(100%);
-    gap: 0.5rem;
-
-    .tile-top-weather {
-      min-width: calc(50% - 1rem);
-      max-width: calc(50% - 1rem);
-      padding: 0.5rem;
-      display: flex;
-      flex-direction: column;
-      gap: 0.5rem;
-
-      .tile-temp {
-        font-size: 1.5rem;
-        font-weight: 700;
-      }
-
-      .tile-weather {
-        font-size: 0.75rem;
-      }
-    }
-
-    .tile-top-icon {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
-      min-width: calc(50% - 1rem);
-      max-width: calc(50% - 1rem);
-      padding: 0.5rem;
-      height: 5rem;
-      img {
-        heigth: 4rem;
-        width: 4rem;
-      }
-    }
-  }
-
-  .location-tile-bottom {
-    width: calc(100%);
-    padding: 0.5rem;
-    text-align: left;
+  app-tile-location {
+    width: 50%;
   }
 }
+
+
