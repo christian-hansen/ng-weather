@@ -19,4 +19,8 @@ getForecastData(city: string) {
   return this.http.get(`https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=${environment.units}&limit=${environment.limit}&lang=en&appid=${environment.API_KEY}`)
 }
 
+getFourDaysHourlyForecastData(city: string) {
+  return this.http.get(`https://api.openweathermap.org/data/2.5/forecast/hourly?q=${city}&units=${environment.units}&limit=${environment.limit}&lang=en&appid=${environment.API_KEY}`)
+}
+
 }

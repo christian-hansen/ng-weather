@@ -6,13 +6,15 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { StartComponent } from './components/start/start.component';
-import { TileLocationComponent } from './components/tile-location/tile-location.component';
+import { LocationDetailComponent } from './components/location-detail/location-detail.component';
+import { LocationTileComponent } from './components/location-tile/location-tile.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     StartComponent,
-    TileLocationComponent
+    LocationTileComponent,
+    LocationDetailComponent
   ],
   imports: [
     BrowserModule,

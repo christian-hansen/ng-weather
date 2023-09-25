@@ -1,9 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { LocationDetailComponent } from './components/location-detail/location-detail.component';
 import { StartComponent } from './components/start/start.component';
 
 const routes: Routes = [
-  {path: "", component: StartComponent}
+  {path: "", component: StartComponent},
+  {path: "meerbusch", component: LocationDetailComponent},
 ];
 
 @NgModule({

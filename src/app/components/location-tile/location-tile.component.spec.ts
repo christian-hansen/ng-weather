@@ -1,16 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { TileLocationComponent } from './tile-location.component';
+import { LocationTileComponent } from './location-tile.component';
 
 describe('TileLocationComponent', () => {
-  let component: TileLocationComponent;
-  let fixture: ComponentFixture<TileLocationComponent>;
+  let component: LocationTileComponent;
+  let fixture: ComponentFixture<LocationTileComponent>;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [TileLocationComponent]
+      declarations: [LocationTileComponent]
     });
-    fixture = TestBed.createComponent(TileLocationComponent);
+    fixture = TestBed.createComponent(LocationTileComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

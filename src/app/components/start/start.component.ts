@@ -7,59 +7,29 @@ import { WeatherService } from 'src/app/services/weather.service';
   styleUrls: ['./start.component.scss'],
 })
 export class StartComponent {
-  weather!: any;
-  cityName!: string;
-  currentTemp!: number;
-  tempMin!: number;
-  tempMax!: number;
-  humidity!: number;
-  windSpeed!: number;
+  cities: any = ['Meerbusch', 'New York']
 
-  city: string = 'Meerbusch';
+  location: string = '';
 
   constructor(private weatherservice: WeatherService) {}
 
   ngOnInit(): void {
-    this.getWeatherData(this.city);
-    this.getForecastData(this.city);
-    this.city = '';
+    this.getSavedLocations();
+    // this.getWeatherData(this.city);
+    // this.getForecastData(this.city);
+    this.location = '';
   }
 
   onSubmit() {
-    this.getWeatherData(this.city);
-    this.getForecastData(this.city);
-    this.city = '';
+    // this.getWeatherData(this.city);
+    // this.getForecastData(this.city);
+    this.location = '';
   }
 
-  private getWeatherData(cityName: string) {
-    this.weatherservice.getWeatherData(cityName).subscribe({
-      next: (weather) => {
-        console.log('Weather', weather);
-
-        this.weather = weather;
-        this.cityName = this.weather.name;
-        this.currentTemp = this.weather.main.temp;
-        this.tempMin = this.weather.main.temp_min;
-        this.tempMax = this.weather.main.temp_max;
-        this.humidity = this.weather.main.humidity;
-        this.windSpeed = this.weather.wind.speed;
-      },
-
-      error: (error) => console.warn(error.message),
-
-      complete: () => console.info('API call completed'),
-    });
-  }
-
-  private getForecastData(cityName: string) {
-    this.weatherservice.getForecastData(cityName).subscribe({
-      next: (forecast) => {
-        console.log('Forecast', forecast);
-      },
-
-      error: (error) => console.warn(error.message),
-
-      complete: () => console.info('API Forecast call completed'),
-    });
+  getSavedLocations() {
+    //getitems from localstorage
+    //add items to locations array
+    console.log("Load Cities from Local Storage");
+    
   }
 }

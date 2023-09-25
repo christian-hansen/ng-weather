@@ -1,0 +1,22 @@
+<div class="location-tile clickable transparent-bg">
+    <div class="location-tile-top">
+        <div class="tile-top-weather">
+            <div class="tile-temp">{{ currentTemp | number: '1.0-0' }}°</div>
+            <div class="tile-weather">{{ weatherConditions }}</div>
+        </div>
+        <div class="tile-top-icon">
+            <img *ngIf="(weatherIcon === '01d') || (weatherIcon === '01n')" src="/assets/images/sunny.png">
+            <img *ngIf="(weatherIcon === '02d') || (weatherIcon === '02n')" src="/assets/images/cloudy.png">
+            <img *ngIf="(weatherIcon === '03d') || (weatherIcon === '03n')" src="/assets/images/verycloudy.png">
+            <img *ngIf="(weatherIcon === '04d') || (weatherIcon === '04n')" src="/assets/images/verycloudy.png">
+            <img *ngIf="(weatherIcon === '09d') || (weatherIcon === '09n')" src="/assets/images/rain.png">
+            <img *ngIf="(weatherIcon === '10d') || (weatherIcon === '10n')" src="/assets/images/rain.png">
+            <img *ngIf="(weatherIcon === '11d') || (weatherIcon === '11n')" src="/assets/images/lightning.png">
+            <img *ngIf="(weatherIcon === '13d') || (weatherIcon === '13n')" src="/assets/images/snow.png">
+            <img *ngIf="(weatherIcon === '50d') || (weatherIcon === '50n')" src="/assets/images/verycloudy.png">
+        </div>
+    </div>
+    <div class="location-tile-bottom">
+        {{ cityName }}
+    </div>
+</div>
