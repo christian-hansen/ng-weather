@@ -10,7 +10,7 @@ import { WeatherService } from 'src/app/services/weather.service';
 export class LocationDetailComponent {
   location!: string;
   weather!: any;
-  cityName!: string;
+  locationName!: string;
   currentTemp!: number;
   tempMin!: number;
   tempMax!: number;
@@ -42,7 +42,7 @@ private getWeatherData(cityName: string) {
       console.log('Weather', weather);
 
       this.weather = weather;
-      this.cityName = this.weather.name;
+      this.locationName = this.weather.name;
       this.currentTemp = this.weather.main.temp;
       this.tempMin = this.weather.main.temp_min;
       this.tempMax = this.weather.main.temp_max;

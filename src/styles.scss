@@ -1,5 +1,7 @@
 :root {
     --background: #0b0b3d;
+    --transparent: rgba(255, 255, 255, 0.1);
+    --blue: #1b86e6;
     --font-light: white;
     --font1: 2rem;
     --font2: 1rem;
@@ -7,11 +9,11 @@
 }
 
 .transparent-bg {
-    background-color: rgba(255, 255, 255, 0.1) !important;
+    background-color: var(--transparent) !important;
 }
 
 .blue-bg {
-    background-color: #1b86e6 !important;
+    background-color: var(--blue) !important;
 }
 
 .clickable {
@@ -60,6 +62,7 @@ app-location-detail {
     display: flex;
     flex-direction: column;
     gap: 2rem;
+    overflow: hidden;
 }
 
 app-location-tile {
@@ -69,6 +72,7 @@ app-location-tile {
     // display: flex;
     // flex-direction: column;
     // gap: 2rem;
+    overflow: hidden;
 }
 
 .main-header {

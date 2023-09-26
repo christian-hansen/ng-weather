@@ -1,18 +1,31 @@
 <div class="main-header">
 <h1>Pick location</h1>
-<div>Find the area or citiy that you want to know the detaiked weather info at this time</div>
+<div>Find the city that you want to know the detailed weather info at this time</div>
 </div>
 
-<!-- <div class="search-container clickable transparent-bg">
+<div class="search-container clickable transparent-bg">
     <form #form="ngForm" (submit)="onSubmit()">
         <input class="clickable" type="text" placeholder="Search city" name="location" [(ngModel)]="location">
       </form>
 <div class="location-picker"></div>
-</div> -->
+</div>
+
+<!-- Error message -->
+<div *ngIf="errorMessage" class="error">
+    {{ errorMessage }}
+  </div>
 
 <div class="location-overview-container">
-    <app-location-tile [location]="cities[0]"></app-location-tile>
-    <app-location-tile [location]="cities[1]"></app-location-tile>
-    <app-location-tile [location]="cities[2]"></app-location-tile>
-    <app-location-tile [location]="cities[3]"></app-location-tile>
+    <ng-container *ngFor="let city of cities">
+    <app-location-tile [location]=city (deleteRequested)="showDeleteDialog($event)"></app-location-tile>
+    </ng-container>
+</div>
+
+<div *ngIf="isDialogActive" class="dialog-container">
+    <div class="dialog">
+        <div>Do you really want to delete?</div>
+        <div class="btn-container">
+            <button (click)="removeLocation()">Yes</button>
+            <button (click)="closeDialog()">No</button></div>
+    </div>
 </div>

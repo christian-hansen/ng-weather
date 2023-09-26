@@ -1,4 +1,4 @@
-<a href="/{{ cityName | lowercase }}" class="location-tile clickable transparent-bg">
+<div [routerLink]="['/', locationName | lowercase]" class="location-tile clickable transparent-bg">
     <div class="location-tile-top">
         <div class="tile-top-weather">
             <div class="tile-temp">{{ currentTemp | number: '1.0-0' }}°</div>
@@ -17,6 +17,8 @@
         </div>
     </div>
     <div class="location-tile-bottom">
-        {{ cityName }}
+        <div>{{ locationName }}</div>
+        <div class="remove-location" (click)="removeLocation(locationName); $event.stopPropagation()">X</div>
     </div>
-</a>
+    
+</div>

@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { WeatherService } from 'src/app/services/weather.service';
 
 @Component({
@@ -9,7 +9,7 @@ import { WeatherService } from 'src/app/services/weather.service';
 export class LocationTileComponent {
 @Input() location!: string;
 weather!: any;
-  cityName!: string;
+  locationName!: string;
   currentTemp!: number;
   tempMin!: number;
   tempMax!: number;
@@ -17,6 +17,7 @@ weather!: any;
   windSpeed!: number;
   weatherConditions!: string;
   weatherIcon!: string;
+  @Output() deleteRequested = new EventEmitter();
 
 constructor(private weatherservice: WeatherService) {}
 
@@ -25,13 +26,17 @@ ngOnInit(): void {
   this.getForecastData(this.location);
 }
 
+removeLocation(locationName: string) {
+  this.deleteRequested.emit(locationName);  
+}
+
 private getWeatherData(cityName: string) {
   this.weatherservice.getWeatherData(cityName).subscribe({
     next: (weather) => {
       console.log('Weather', weather);
 
       this.weather = weather;
-      this.cityName = this.weather.name;
+      this.locationName = this.weather.name;
       this.currentTemp = this.weather.main.temp;
       this.tempMin = this.weather.main.temp_min;
       this.tempMax = this.weather.main.temp_max;
