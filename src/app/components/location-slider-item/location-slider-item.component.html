@@ -1,0 +1,18 @@
+
+<div class="forecast-slider-item clickable blue-bg">
+    <div class="forecast-slider-item-left">
+        <img *ngIf="(weatherIcon === '01d') || (weatherIcon === '01n')" src="/assets/images/sunny.png">
+        <img *ngIf="(weatherIcon === '02d') || (weatherIcon === '02n')" src="/assets/images/cloudy.png">
+        <img *ngIf="(weatherIcon === '03d') || (weatherIcon === '03n')" src="/assets/images/verycloudy.png">
+        <img *ngIf="(weatherIcon === '04d') || (weatherIcon === '04n')" src="/assets/images/verycloudy.png">
+        <img *ngIf="(weatherIcon === '09d') || (weatherIcon === '09n')" src="/assets/images/rain.png">
+        <img *ngIf="(weatherIcon === '10d') || (weatherIcon === '10n')" src="/assets/images/rain.png">
+        <img *ngIf="(weatherIcon === '11d') || (weatherIcon === '11n')" src="/assets/images/lightning.png">
+        <img *ngIf="(weatherIcon === '13d') || (weatherIcon === '13n')" src="/assets/images/snow.png">
+        <img *ngIf="(weatherIcon === '50d') || (weatherIcon === '50n')" src="/assets/images/verycloudy.png">
+    </div>
+    <div class="forecast-slider-item-right ">
+        <div>{{time | date: 'HH:00'}}</div>
+        <div>{{data.main.temp | number: '1.0-0' }}°</div>
+    </div>
+</div>

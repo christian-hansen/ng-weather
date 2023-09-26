@@ -30,8 +30,6 @@ export class LocationDetailComponent {
   }
 
 ngOnInit(): void {
-  ;
-
   this.getWeatherData(this.location);
   this.getForecastData(this.location);
 }

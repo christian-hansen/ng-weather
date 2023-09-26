@@ -1,0 +1,21 @@
+.forecast-item-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+
+    div {
+        min-width: 33%;
+        max-width: 33%;
+    }
+
+}
+
+.forecast-item-icon {
+max-width: 33%;
+padding: 0.5rem;
+
+img {
+    max-width: calc(33%);
+}
+}

@@ -65,6 +65,16 @@ app-location-detail {
     overflow: hidden;
 }
 
+app-location-full-report {
+    min-width: calc(100% - 2rem);
+    max-width: 400px;
+    height: calc(100vh - 2rem);
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    overflow: hidden;
+}
+
 app-location-tile {
     min-width: calc(50% - 0.25rem);
     max-width: calc(50% - 0.25rem);
@@ -86,4 +96,69 @@ app-location-tile {
     h1 {
         font-weight: 400;
     }
+}
+
+
+.forecast-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.forecast-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 100%;
+    gap: 1rem;
+}
+
+.forecast-slider {
+    margin-top: -1rem;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 0.5rem;
+    width: calc(100vw - 4rem);
+    max-width: 400px;
+}
+
+.forecast-slider-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    
+    .forecast-slider-item-left {
+        img {
+            width: 2.5rem;
+        }
+    }
+}
+  
+    
+
+.scroll {
+    overflow-x: scroll;
+}
+
+
+.scroll::-webkit-scrollbar {
+    height: 0.5rem;
+}
+
+.scroll::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+.scroll::-webkit-scrollbar-thumb {
+    background-color: #2A3647;
+    border-radius: 10px;
+}
+  
+  /* Smartphones (portrait) ----------- */
+  @media only screen and (max-width: 450px) {
+    .scroll::-webkit-scrollbar {
+        display: none;
+  }
   }

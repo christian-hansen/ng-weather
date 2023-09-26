@@ -1,7 +1,6 @@
 <div class="main-header">
   <h1>{{locationName}}</h1>
   <div>{{today | date: 'fullDate'}}</div>
-  <!-- <div [routerLink]="['/']">Go back</div> -->
 </div>
 
 <div class="switch-container">
@@ -37,88 +36,14 @@
 
 <div class="forecast-header">
     <div>Next 12 hours</div>
-    <!-- <div>View full report</div> -->
+    <a [routerLink]="['/',locationName | lowercase,'full']">View full report</a>
   </div>
 
 <div *ngIf="forecast && forecast.list" class="forecast-container">
-  <div class="forecast-slider">
-    <div class="forecast-slider-item clickable blue-bg">
-      <div class="forecast-slider-item-left">
-    <img *ngIf="(this.forecast.list[0].weather[0].icon === '01d') || (this.forecast.list[0].weather[0].icon === '01n')" src="/assets/images/sunny.png">
-    <img *ngIf="(this.forecast.list[0].weather[0].icon === '02d') || (this.forecast.list[0].weather[0].icon === '02n')" src="/assets/images/cloudy.png">
-    <img *ngIf="(this.forecast.list[0].weather[0].icon === '03d') || (this.forecast.list[0].weather[0].icon === '03n')" src="/assets/images/verycloudy.png">
-    <img *ngIf="(this.forecast.list[0].weather[0].icon === '04d') || (this.forecast.list[0].weather[0].icon === '04n')" src="/assets/images/verycloudy.png">
-    <img *ngIf="(this.forecast.list[0].weather[0].icon === '09d') || (this.forecast.list[0].weather[0].icon === '09n')" src="/assets/images/rain.png">
-    <img *ngIf="(this.forecast.list[0].weather[0].icon === '10d') || (this.forecast.list[0].weather[0].icon === '10n')" src="/assets/images/rain.png">
-    <img *ngIf="(this.forecast.list[0].weather[0].icon === '11d') || (this.forecast.list[0].weather[0].icon === '11n')" src="/assets/images/lightning.png">
-    <img *ngIf="(this.forecast.list[0].weather[0].icon === '13d') || (this.forecast.list[0].weather[0].icon === '13n')" src="/assets/images/snow.png">
-    <img *ngIf="(this.forecast.list[0].weather[0].icon === '50d') || (this.forecast.list[0].weather[0].icon === '50n')" src="/assets/images/verycloudy.png">
-      </div>
-      <div class="forecast-slider-item-right ">
-        <div>{{forecast.list[0].dt*1000 | date: 'HH:00'}}</div>
-        <div>{{forecast.list[0].main.temp | number: '1.0-0' }}°</div>
-      </div>
-      </div>
-    <div class="forecast-slider-item clickable transparent-bg">
-        <div class="forecast-slider-item-left">
-            <img *ngIf="(this.forecast.list[1].weather[0].icon === '01d') || (this.forecast.list[1].weather[0].icon === '01n')" src="/assets/images/sunny.png">
-            <img *ngIf="(this.forecast.list[1].weather[0].icon === '02d') || (this.forecast.list[1].weather[0].icon === '02n')" src="/assets/images/cloudy.png">
-            <img *ngIf="(this.forecast.list[1].weather[0].icon === '03d') || (this.forecast.list[1].weather[0].icon === '03n')" src="/assets/images/verycloudy.png">
-            <img *ngIf="(this.forecast.list[1].weather[0].icon === '04d') || (this.forecast.list[1].weather[0].icon === '04n')" src="/assets/images/verycloudy.png">
-            <img *ngIf="(this.forecast.list[1].weather[0].icon === '09d') || (this.forecast.list[1].weather[0].icon === '09n')" src="/assets/images/rain.png">
-            <img *ngIf="(this.forecast.list[1].weather[0].icon === '10d') || (this.forecast.list[1].weather[0].icon === '10n')" src="/assets/images/rain.png">
-            <img *ngIf="(this.forecast.list[1].weather[0].icon === '11d') || (this.forecast.list[1].weather[0].icon === '11n')" src="/assets/images/lightning.png">
-            <img *ngIf="(this.forecast.list[1].weather[0].icon === '13d') || (this.forecast.list[1].weather[0].icon === '13n')" src="/assets/images/snow.png">
-            <img *ngIf="(this.forecast.list[1].weather[0].icon === '50d') || (this.forecast.list[1].weather[0].icon === '50n')" src="/assets/images/verycloudy.png">
-        </div>
-        <div class="forecast-slider-item-right ">
-          <div>{{forecast.list[1].dt*1000 | date: 'HH:00'}}</div>
-          <div>{{forecast.list[1].main.temp | number: '1.0-0' }}°</div>
-        </div>
-      </div>
-    <div class="forecast-slider-item clickable transparent-bg">
-        <div class="forecast-slider-item-left">
-            <img *ngIf="(this.forecast.list[2].weather[0].icon === '01d') || (this.forecast.list[2].weather[0].icon === '01n')" src="/assets/images/sunny.png">
-            <img *ngIf="(this.forecast.list[2].weather[0].icon === '02d') || (this.forecast.list[2].weather[0].icon === '02n')" src="/assets/images/cloudy.png">
-            <img *ngIf="(this.forecast.list[2].weather[0].icon === '03d') || (this.forecast.list[2].weather[0].icon === '03n')" src="/assets/images/verycloudy.png">
-            <img *ngIf="(this.forecast.list[2].weather[0].icon === '04d') || (this.forecast.list[2].weather[0].icon === '04n')" src="/assets/images/verycloudy.png">
-            <img *ngIf="(this.forecast.list[2].weather[0].icon === '09d') || (this.forecast.list[2].weather[0].icon === '09n')" src="/assets/images/rain.png">
-            <img *ngIf="(this.forecast.list[2].weather[0].icon === '10d') || (this.forecast.list[2].weather[0].icon === '10n')" src="/assets/images/rain.png">
-            <img *ngIf="(this.forecast.list[2].weather[0].icon === '11d') || (this.forecast.list[2].weather[0].icon === '11n')" src="/assets/images/lightning.png">
-            <img *ngIf="(this.forecast.list[2].weather[0].icon === '13d') || (this.forecast.list[2].weather[0].icon === '13n')" src="/assets/images/snow.png">
-            <img *ngIf="(this.forecast.list[2].weather[0].icon === '50d') || (this.forecast.list[2].weather[0].icon === '50n')" src="/assets/images/verycloudy.png">
-        </div>
-        <div class="forecast-slider-item-right ">
-          <div>{{forecast.list[2].dt*1000 | date: 'HH:00'}}</div>
-          <div>{{forecast.list[2].main.temp | number: '1.0-0' }}°</div>
-        </div>
-      </div>
-      <div class="forecast-slider-item clickable transparent-bg">
-        <div class="forecast-slider-item-left">
-            <img *ngIf="(this.forecast.list[3].weather[0].icon === '01d') || (this.forecast.list[3].weather[0].icon === '01n')" src="/assets/images/sunny.png">
-            <img *ngIf="(this.forecast.list[3].weather[0].icon === '02d') || (this.forecast.list[3].weather[0].icon === '02n')" src="/assets/images/cloudy.png">
-            <img *ngIf="(this.forecast.list[3].weather[0].icon === '03d') || (this.forecast.list[3].weather[0].icon === '03n')" src="/assets/images/verycloudy.png">
-            <img *ngIf="(this.forecast.list[3].weather[0].icon === '04d') || (this.forecast.list[3].weather[0].icon === '04n')" src="/assets/images/verycloudy.png">
-            <img *ngIf="(this.forecast.list[3].weather[0].icon === '09d') || (this.forecast.list[3].weather[0].icon === '09n')" src="/assets/images/rain.png">
-            <img *ngIf="(this.forecast.list[3].weather[0].icon === '10d') || (this.forecast.list[3].weather[0].icon === '10n')" src="/assets/images/rain.png">
-            <img *ngIf="(this.forecast.list[3].weather[0].icon === '11d') || (this.forecast.list[3].weather[0].icon === '11n')" src="/assets/images/lightning.png">
-            <img *ngIf="(this.forecast.list[3].weather[0].icon === '13d') || (this.forecast.list[3].weather[0].icon === '13n')" src="/assets/images/snow.png">
-            <img *ngIf="(this.forecast.list[3].weather[0].icon === '50d') || (this.forecast.list[3].weather[0].icon === '50n')" src="/assets/images/verycloudy.png">
-        </div>
-        <div class="forecast-slider-item-right ">
-          <div>{{forecast.list[3].dt*1000 | date: 'HH:00'}}</div>
-          <div>{{forecast.list[3].main.temp | number: '1.0-0' }}°</div>
-        </div>
-      </div>
-      <!-- <div class="forecast-slider-item clickable transparent-bg">
-        <div class="forecast-slider-item-left">
-          <img src="/assets/images/rain.png">
-        </div>
-        <div class="forecast-slider-item-right ">
-          <div>15:00</div>
-          <div>30°</div>
-        </div>
-      </div> -->
+  <div class="forecast-slider scroll">
+    <ng-container *ngFor="let item of forecastList | slice:0:4">
+<app-location-slider-item [data]="item"></app-location-slider-item>
+</ng-container>
 
     <div></div>
   </div>

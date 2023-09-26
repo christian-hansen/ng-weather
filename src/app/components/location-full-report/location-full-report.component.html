@@ -1,0 +1,32 @@
+<div class="main-header">
+    <h1>{{locationName}}</h1>
+    <!-- <div>{{today | date: 'fullDate'}}</div> -->
+</div>
+
+<div class="forecast-header">
+    <div>Next 12 hours</div>
+ </div>
+
+<div *ngIf="forecast && forecast.list" class="forecast-container">
+  <div class="forecast-slider scroll">
+    <ng-container *ngFor="let item of forecastList | slice:0:4">
+<app-location-slider-item [data]="item"></app-location-slider-item>
+</ng-container>
+  </div>
+
+<div>
+    Next forecast
+</div>
+
+<div class="forecast-item-container">
+    <div class="forecast-item-container-left">
+        <div>Friday</div>
+        <div>May,28</div>
+    </div>
+    <div class="forecast-item-temp">
+        32°C
+    </div>
+    <div class="forecast-item-icon">
+        <img src="/assets/images/sunny.png">
+    </div>
+</div>
