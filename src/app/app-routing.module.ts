@@ -5,7 +5,7 @@ import { StartComponent } from './components/start/start.component';
 
 const routes: Routes = [
   {path: "", component: StartComponent},
-  {path: "meerbusch", component: LocationDetailComponent},
+  {path: ":city", component: LocationDetailComponent},
 ];
 
 @NgModule({

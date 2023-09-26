@@ -27,7 +27,7 @@
   }
 
 body {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Inter', sans-serif;
     display: flex;
     justify-content: center;
     align-items: flex-start;
@@ -46,6 +46,7 @@ body {
 
 app-start {
     min-width: calc(100% - 2rem);
+    max-width: 400px;
     height: calc(100vh - 2rem);
     display: flex;
     flex-direction: column;
@@ -54,6 +55,7 @@ app-start {
 
 app-location-detail {
     min-width: calc(100% - 2rem);
+    max-width: 400px;
     height: calc(100vh - 2rem);
     display: flex;
     flex-direction: column;
@@ -62,6 +64,7 @@ app-location-detail {
 
 app-location-tile {
     min-width: calc(50% - 0.25rem);
+    max-width: calc(50% - 0.25rem);
     // height: calc(100vh - 2rem);
     // display: flex;
     // flex-direction: column;
@@ -75,4 +78,8 @@ app-location-tile {
     align-items: center;
     gap: 0.5rem;
     text-align: center;
+
+    h1 {
+        font-weight: 400;
+    }
   }

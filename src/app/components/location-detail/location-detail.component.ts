@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { tap } from 'rxjs';
+import { ActivatedRoute } from '@angular/router';
 import { WeatherService } from 'src/app/services/weather.service';
 
 @Component({
@@ -25,12 +25,13 @@ export class LocationDetailComponent {
 
   today: Date = new Date();
 
-  constructor(private weatherservice: WeatherService) {}
+  constructor(private weatherservice: WeatherService, private router: ActivatedRoute) {
+    this.router.url.subscribe(result => this.location = result[0].path)
+  }
 
 ngOnInit(): void {
-  this.location = 'Meerbusch';
-  console.log("today", this.today);
-  
+  ;
+
   this.getWeatherData(this.location);
   this.getForecastData(this.location);
 }

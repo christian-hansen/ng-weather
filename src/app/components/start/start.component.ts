@@ -7,7 +7,7 @@ import { WeatherService } from 'src/app/services/weather.service';
   styleUrls: ['./start.component.scss'],
 })
 export class StartComponent {
-  cities: any = ['Meerbusch', 'New York']
+  cities: Array<string> = ['Meerbusch', 'New York', 'Sydney', 'Tokyo']
 
   location: string = '';
 

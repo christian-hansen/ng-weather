@@ -1,4 +1,4 @@
-<div class="location-tile clickable transparent-bg">
+<a href="/{{ cityName | lowercase }}" class="location-tile clickable transparent-bg">
     <div class="location-tile-top">
         <div class="tile-top-weather">
             <div class="tile-temp">{{ currentTemp | number: '1.0-0' }}°</div>
@@ -19,4 +19,4 @@
     <div class="location-tile-bottom">
         {{ cityName }}
     </div>
-</div>
+</a>
