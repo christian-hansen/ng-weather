@@ -1,15 +1,23 @@
 .search-container {
   width: 100%;
 
+
   input {
     width: 100%;
+    background: transparent;
+    border: none;
+    color: var(--font-light);
+
+    &:focus-visible {
+      outline: none;
+    }
   }
 }
 
 .location-overview-container {
   display: flex;
   flex-wrap: wrap;
-   gap: 0.5rem;
+   gap: 1rem;
   width: 100%;
 
   app-tile-location {

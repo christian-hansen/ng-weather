@@ -40,6 +40,13 @@ export class WeatherService {
     );
   }
 
+  // getSixteenDaysForecastData(city: string) {
+  //   return this.http.get(
+  //     `https://api.openweathermap.org/data/2.5/forecast/daily?q=${city}&appid=${environment.API_KEY}`
+  //   );
+  // }
+
+
   saveLocationsToLocalStorage(cities: Array<string>) {
     localStorage.setItem('weathercities', JSON.stringify(cities));
   }

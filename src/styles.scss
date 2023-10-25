@@ -3,9 +3,9 @@
     --transparent: rgba(255, 255, 255, 0.1);
     --blue: #1b86e6;
     --font-light: white;
-    --font1: 2rem;
-    --font2: 1rem;
-    --font3: 0.75rem;
+    --headline: 2rem;
+    --defaulttext: 1rem;
+    --smalltext: 0.75rem;
 }
 
 .transparent-bg {
@@ -36,11 +36,11 @@ body {
     width: 100%;
     height: 100vh;
     background: #060926; /* fallback for browsers that don't support gradients */
-    background-image: radial-gradient(
-        circle at 165% -66%,
-        #07749d 20%,
-        rgba(255, 255, 255, 0) 65%
-      );
+    // background-image: radial-gradient(
+    //     circle at 165% -66%,
+    //     #07749d 20%,
+    //     rgba(255, 255, 255, 0) 65%
+    //   );
 
     color: var(--font-light);
     padding: 2rem;
@@ -62,7 +62,7 @@ app-location-detail {
     display: flex;
     flex-direction: column;
     gap: 2rem;
-    overflow: hidden;
+    // overflow: hidden;
 }
 
 app-location-full-report {
@@ -72,12 +72,12 @@ app-location-full-report {
     display: flex;
     flex-direction: column;
     gap: 2rem;
-    overflow: hidden;
+    // overflow: hidden;
 }
 
 app-location-tile {
-    min-width: calc(50% - 0.25rem);
-    max-width: calc(50% - 0.25rem);
+    min-width: calc(50% - 0.5rem);
+    max-width: calc(50% - 0.5rem);
     // height: calc(100vh - 2rem);
     // display: flex;
     // flex-direction: column;
@@ -95,6 +95,7 @@ app-location-tile {
 
     h1 {
         font-weight: 400;
+        font-size: var(--headline)
     }
 }
 
@@ -104,6 +105,15 @@ app-location-tile {
     align-items: center;
     justify-content: space-between;
     width: 100%;
+
+    a {
+     color: var(--blue);
+     text-decoration: none;   
+
+     &:hover {
+        color: white;
+     }
+    }
 }
 
 .forecast-container {
@@ -122,6 +132,7 @@ app-location-tile {
     gap: 0.5rem;
     width: calc(100vw - 4rem);
     max-width: 400px;
+    padding-bottom: 0.5rem;
 }
 
 .forecast-slider-item {
@@ -136,7 +147,19 @@ app-location-tile {
     }
 }
   
-    
+.navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-bottom: -24px;
+
+    img {
+        // height: 32px;
+        width: 24px;
+        cursor: pointer;
+    }
+}
 
 .scroll {
     overflow-x: scroll;

@@ -12,7 +12,7 @@
         <img *ngIf="(weatherIcon === '50d') || (weatherIcon === '50n')" src="/assets/images/verycloudy.png">
     </div>
     <div class="forecast-slider-item-right ">
-        <div>{{time | date: 'HH:00'}}</div>
+        <div>{{ time | date:'HH:mm':'Z' }}</div>
         <div>{{data.main.temp | number: '1.0-0' }}°</div>
     </div>
 </div>

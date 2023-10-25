@@ -1,12 +1,17 @@
+<div class="navigation">
+  <img [routerLink]="['/']" src="/assets/images/home.png" alt="">
+  <img [routerLink]="['/']" src="/assets/images/back.png" alt="">
+</div>
+
 <div class="main-header">
   <h1>{{locationName}}</h1>
   <div>{{today | date: 'fullDate'}}</div>
 </div>
 
-<div class="switch-container">
+<!-- <div class="switch-container">
     <div class="clickable switch blue-bg">Forecast</div>
     <div class="clickable switch transparent-bg" [routerLink]="['/']">Go Back</div>
-</div>
+</div> -->
 
 <div class="current-container">
   <img *ngIf="(weatherIcon === '01d') || (weatherIcon === '01n')" src="/assets/images/sunny.png">
@@ -35,8 +40,8 @@
 </div>
 
 <div class="forecast-header">
-    <div>Next 12 hours</div>
-    <a [routerLink]="['/',locationName | lowercase,'full']">View full report</a>
+    <div>Next hours</div>
+    <a [routerLink]="['/',locationName | lowercase,'full']">View full forecast</a>
   </div>
 
 <div *ngIf="forecast && forecast.list" class="forecast-container">

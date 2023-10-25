@@ -49,7 +49,7 @@
         padding: 0.5rem;
         height: 5rem;
         img {
-          heigth: 4rem;
+          // height: 4rem;
           width: 4rem;
         }
       }
@@ -70,9 +70,14 @@
       }
 
       .remove-location {
-        display: none;
+ 
         z-index: 1;
         cursor: pointer;
+        width: 1rem;
+        height: 1rem;
+        background-size: 1rem;
+        background-repeat: no-repeat;
+        background-image: url("/assets/images/remove.png");
       }
 
       &:hover {
@@ -89,3 +94,10 @@
     }
   }
 
+
+  // Only show the remove-location class on devices that can hover
+  @media (hover: hover) {
+    .remove-location {
+      display:none !important;
+    }
+  }
