@@ -98,6 +98,17 @@
   // Only show the remove-location class on devices that can hover
   @media (hover: hover) {
     .remove-location {
-      display:none !important;
+      display:none;
+    }
+
+    .location-tile-bottom:hover {
+      div {
+        max-width: 80%;
+        overflow: hidden;
+      }
+
+      .remove-location {
+        display:block !important;
+      }
     }
   }
