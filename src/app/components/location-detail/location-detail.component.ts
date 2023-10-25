@@ -37,7 +37,7 @@ ngOnInit(): void {
 private getWeatherData(cityName: string) {
   this.weatherservice.getWeatherData(cityName).subscribe({
     next: (weather) => {
-      console.log('Weather', weather);
+      // console.log('Weather', weather);
 
       this.weather = weather;
       this.locationName = this.weather.name;
@@ -52,23 +52,23 @@ private getWeatherData(cityName: string) {
 
     error: (error) => console.warn(error.message),
 
-    complete: () => console.info('API call completed'),
+    // complete: () => console.info('API call completed'),
   });
 }
 
 private getForecastData(cityName: string) {
   this.weatherservice.getForecastData(cityName).subscribe({
     next: (forecast) => {
-      console.log('Forecast', forecast);
+      // console.log('Forecast', forecast);
       this.forecast = forecast;
       this.forecastList = this.forecast.list
-      console.log(this.forecastList);
+      // console.log(this.forecastList);
       
     },
 
     error: (error) => console.warn(error.message),
 
-    complete: () => console.info('API Forecast call completed'),
+    // complete: () => console.info('API Forecast call completed'),
   });
 }
 }

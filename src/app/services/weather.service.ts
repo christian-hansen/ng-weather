@@ -57,7 +57,7 @@ export class WeatherService {
       let loadedCities = JSON.parse(localStorage.getItem('weathercities')!);
       return loadedCities;
     } else {
-      console.log('No weather items in local storage');
+      console.warn('No weather items in local storage');
       return this.defaultCities;
     }
   }
@@ -68,7 +68,7 @@ export class WeatherService {
       cities.splice(cities.indexOf(cityName), 1);
       this.saveLocationsToLocalStorage(cities);
     } else {
-      console.log(cityName, 'not found in', cities);
+      console.warn(cityName, 'not found in', cities);
     }
     //TODO remove selected city/position from array
     //this.saveLocationsToLocalStorage(cities)

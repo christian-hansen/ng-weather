@@ -32,12 +32,12 @@ export class LocationFullReportComponent {
   }
 
   ngOnInit(): void {
-    console.log(this.location);
+    // console.log(this.location);
     this.getWeatherData(this.location);
     this.getForecastData(this.location);
     this.getCurrentTime();
     this.foreCastIndex = this.setForeCastIndexBasedOnTimeHours();
-    console.log("this.currentTimeHours", this.currentTimeHours, "this.foreCastIndex", this.foreCastIndex);      
+    // console.log("this.currentTimeHours", this.currentTimeHours, "this.foreCastIndex", this.foreCastIndex);      
   }
 
   private getWeatherData(cityName: string) {
@@ -57,7 +57,7 @@ export class LocationFullReportComponent {
 
       error: (error) => console.warn(error.message),
 
-      complete: () => console.info('API call completed'),
+      // complete: () => console.info('API call completed'),
     });
   }
 
@@ -72,7 +72,7 @@ export class LocationFullReportComponent {
 
       error: (error) => console.warn(error.message),
 
-      complete: () => console.info('API Forecast call completed'),
+      // complete: () => console.info('API Forecast call completed'),
     });
   }
 

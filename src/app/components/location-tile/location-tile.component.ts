@@ -23,7 +23,6 @@ constructor(private weatherservice: WeatherService) {}
 
 ngOnInit(): void {
   this.getWeatherData(this.location);
-  this.getForecastData(this.location);
 }
 
 removeLocation(locationName: string) {
@@ -33,7 +32,7 @@ removeLocation(locationName: string) {
 private getWeatherData(cityName: string) {
   this.weatherservice.getWeatherData(cityName).subscribe({
     next: (weather) => {
-      console.log('Weather', weather);
+      // console.log('Weather', weather);
 
       this.weather = weather;
       this.locationName = this.weather.name;
@@ -48,19 +47,7 @@ private getWeatherData(cityName: string) {
 
     error: (error) => console.warn(error.message),
 
-    complete: () => console.info('API call completed'),
-  });
-}
-
-private getForecastData(cityName: string) {
-  this.weatherservice.getForecastData(cityName).subscribe({
-    next: (forecast) => {
-      console.log('Forecast', forecast);
-    },
-
-    error: (error) => console.warn(error.message),
-
-    complete: () => console.info('API Forecast call completed'),
+    // complete: () => console.info('API call completed'),
   });
 }
 

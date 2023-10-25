@@ -12,7 +12,7 @@ weatherIcon!: string;
 temp!: number;
 
 ngOnInit(): void {
-  console.log(this.data);
+  // console.log(this.data);
   this.time = this.data.dt * 1000;
   this.temp = this.data.main.temp;
   this.weatherIcon = this.data.weather[0].icon;
