@@ -4,9 +4,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    // width: calc(50% - 0.5rem);
     width: calc(100%);
-    // width: 95%;
     min-height: 9rem;
     max-height: 9rem;
     text-decoration: none;
@@ -49,7 +47,6 @@
         padding: 0.5rem;
         height: 5rem;
         img {
-          // height: 4rem;
           width: 4rem;
         }
       }
