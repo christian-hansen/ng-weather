@@ -18,7 +18,7 @@
 
 .clickable {
     cursor: pointer;
-    border-radius: 10px;
+    border-radius: 30px;
     padding: 8px 16px;
 }
 
@@ -95,6 +95,7 @@ app-location-tile {
     align-items: center;
     justify-content: space-between;
     width: 100%;
+    margin-top: 1rem;
 
     a {
      color: var(--blue);
@@ -140,6 +141,7 @@ app-location-tile {
 .navigation {
     display: flex;
     justify-content: space-between;
+    flex-direction: row-reverse;
     align-items: center;
     width: 100%;
     margin-bottom: -24px;
@@ -173,4 +175,12 @@ app-location-tile {
     .scroll::-webkit-scrollbar {
         display: none;
   }
+  }
+
+  @media screen and (max-width: 390px) {
+    app-location-tile {
+        min-width: 100%;
+        // max-width: calc(50% - 0.5rem);
+        overflow: hidden;
+    }
   }
